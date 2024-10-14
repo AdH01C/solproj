@@ -1,6 +1,5 @@
 import InternetExplorer from './InternetExplorer';
 import ErrorBox from './ErrorBox';
-import MyComputer from './MyComputer';
 import iePaper from 'assets/windowsIcons/ie-paper.png';
 import ie from 'assets/windowsIcons/ie.png';
 import lw from 'assets/windowsIcons/limewire.png';
@@ -11,26 +10,9 @@ import MSN from './MSN';
 import maple from 'assets/windowsIcons/maple.png';
 import outlook from 'assets/windowsIcons/887(32x32).png';
 import mail from 'assets/windowsIcons/mail.png';
-import mine from 'assets/minesweeper/mine-icon.png';
 import error from 'assets/windowsIcons/897(16x16).png';
-import computer from 'assets/windowsIcons/676(16x16).png';
-import computerLarge from 'assets/windowsIcons/676(32x32).png';
-import notepad from 'assets/windowsIcons/327(16x16).png';
-import notepadLarge from 'assets/windowsIcons/327(32x32).png';
-import winamp from 'assets/windowsIcons/winamp.png';
-import paintLarge from 'assets/windowsIcons/680(32x32).png';
-import paint from 'assets/windowsIcons/680(16x16).png';
 import Email from './Email';
 
-const gen = () => {
-  let id = -1;
-  return () => {
-    id += 1;
-    return id;
-  };
-};
-const genId = gen();
-const genIndex = gen();
 export const defaultAppState = [];
 
 export const defaultIconState = [
