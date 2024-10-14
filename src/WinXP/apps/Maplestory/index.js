@@ -14,7 +14,7 @@ function Maplestory({ onClose }) {
             style={{ zIndex: 10 }}
           />
           <img
-            src="maplelogin.jpg"
+            src="https://i.pinimg.com/736x/8b/27/0d/8b270db1f7424f69b79bec306b8e225d.jpg"
             alt="MapleStory"
             style={{
               zIndex: 10,
