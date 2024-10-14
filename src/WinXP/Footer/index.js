@@ -78,6 +78,7 @@ function Footer({
         />
         {[...apps].map(
           app =>
+            app.header &&
             !app.header.noFooterWindow && (
               <FooterWindow
                 key={app.id}

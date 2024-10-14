@@ -88,10 +88,10 @@ const Window = memo(function({
     x = -3;
     y = -3;
   } else {
-    width = size.width;
-    height = size.height;
-    x = offset.x;
-    y = offset.y;
+    width = size?.width;
+    height = size?.height;
+    x = offset?.x;
+    y = offset?.y;
   }
   return (
     <div
@@ -113,14 +113,14 @@ const Window = memo(function({
       >
         <img
           onDoubleClick={_onMouseUpClose}
-          src={header.icon}
-          alt={header.title}
+          src={header?.icon}
+          alt={header?.title}
           className="app__header__icon"
           draggable={false}
         />
-        <div className="app__header__title">{header.title}</div>
+        <div className="app__header__title">{header?.title}</div>
         <HeaderButtons
-          buttons={header.buttons}
+          buttons={header?.buttons}
           onMaximize={_onMouseUpMaximize}
           onMinimize={_onMouseUpMinimize}
           onClose={_onMouseUpClose}
@@ -145,7 +145,7 @@ const StyledWindow = styled(Window)`
   display: ${({ show }) => (show ? 'flex' : 'none')};
   position: absolute;
   padding: 3px;
-  padding: ${({ header }) => (header.invisible ? 0 : 3)}px;
+  padding: ${({ header }) => (header?.invisible ? 0 : 3)}px;
   background-color: ${({ isFocus }) => (isFocus ? '#0831d9' : '#6582f5')};
   flex-direction: column;
   border-top-left-radius: 8px;
@@ -188,7 +188,7 @@ const StyledWindow = styled(Window)`
     width: 15px;
   }
   .app__header {
-    display: ${({ header }) => (header.invisible ? 'none' : 'flex')};
+    display: ${({ header }) => (header?.invisible ? 'none' : 'flex')};
     height: 25px;
     line-height: 25px;
     font-weight: 700;

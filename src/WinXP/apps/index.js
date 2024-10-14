@@ -42,7 +42,7 @@ export const defaultIconState = [
     icon: maple,
     title: 'Maplestory',
     component: Maplestory,
-    isFocus: false,
+    isFocus: true,
   },
   {
     id: 4,
@@ -62,7 +62,7 @@ export const appSettings = {
     component: InternetExplorer,
     defaultSize: {
       width: 700,
-      height: 500,
+      height: window.innerWidth < 800 ? 250 : 500,
     },
     defaultOffset: {
       x: 140,
@@ -81,7 +81,7 @@ export const appSettings = {
     component: Limewire,
     defaultSize: {
       width: 700,
-      height: 500,
+      height: window.innerWidth < 800 ? 250 : 500,
     },
     defaultOffset: {
       x: 140,
@@ -99,16 +99,16 @@ export const appSettings = {
     },
     component: Maplestory,
     defaultSize: {
-      width: 700,
-      height: 500,
+      width: window.innerWidth < 800 ? 393 : 700,
+      height: window.innerWidth < 800 ? 300 : 500,
     },
     defaultOffset: {
-      x: 140,
-      y: 30,
+      x: window.innerWidth < 800 ? 0 : 140,
+      y: window.innerWidth < 800 ? 0 : 30,
     },
-    resizable: true,
+    resizable: false,
     minimized: false,
-    maximized: window.innerWidth < 800,
+    maximized: false,
     multiInstance: true,
   },
   'E-mail': {
@@ -119,7 +119,7 @@ export const appSettings = {
     component: Email,
     defaultSize: {
       width: 700,
-      height: 500,
+      height: window.innerWidth < 800 ? 250 : 500,
     },
     defaultOffset: {
       x: 140,
@@ -138,7 +138,7 @@ export const appSettings = {
     component: MSN,
     defaultSize: {
       width: 700,
-      height: 500,
+      height: window.innerWidth < 800 ? 250 : 500,
     },
     defaultOffset: {
       x: 140,

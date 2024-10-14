@@ -23,7 +23,6 @@ import allProgramsIcon from 'assets/windowsIcons/all-programs.ico';
 import empty from 'assets/empty.png';
 import lw from 'assets/windowsIcons/limewire.png';
 import msn from 'assets/windowsIcons/msn.png';
-import maplestory from 'assets/windowsIcons/maple.png';
 
 import { AllPrograms, ConnectTo, MyRecentDocuments } from './FooterMenuData';
 
@@ -55,7 +54,7 @@ function FooterMenu({ className, onClick }) {
             items={[
               { icon: lw, text: 'Limewire' },
               { icon: msn, text: 'MSN' },
-              { icon: maplestory, text: 'Maplestory' },
+              // { icon: maplestory, text: 'Maplestory' },
             ]}
           />
           <div style={{ flex: 1 }} />
