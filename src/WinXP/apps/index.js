@@ -1,12 +1,16 @@
 import InternetExplorer from './InternetExplorer';
-import Minesweeper from './Minesweeper';
 import ErrorBox from './ErrorBox';
 import MyComputer from './MyComputer';
-import Notepad from './Notepad';
-import Winamp from './Winamp';
-import Paint from './Paint';
 import iePaper from 'assets/windowsIcons/ie-paper.png';
 import ie from 'assets/windowsIcons/ie.png';
+import lw from 'assets/windowsIcons/limewire.png';
+import Limewire from './Limewire';
+import Maplestory from './Maplestory';
+import msn from 'assets/windowsIcons/msn.png';
+import MSN from './MSN';
+import maple from 'assets/windowsIcons/maple.png';
+import outlook from 'assets/windowsIcons/887(32x32).png';
+import mail from 'assets/windowsIcons/mail.png';
 import mine from 'assets/minesweeper/mine-icon.png';
 import error from 'assets/windowsIcons/897(16x16).png';
 import computer from 'assets/windowsIcons/676(16x16).png';
@@ -16,6 +20,7 @@ import notepadLarge from 'assets/windowsIcons/327(32x32).png';
 import winamp from 'assets/windowsIcons/winamp.png';
 import paintLarge from 'assets/windowsIcons/680(32x32).png';
 import paint from 'assets/windowsIcons/680(16x16).png';
+import Email from './Email';
 
 const gen = () => {
   let id = -1;
@@ -26,89 +31,7 @@ const gen = () => {
 };
 const genId = gen();
 const genIndex = gen();
-export const defaultAppState = [
-  {
-    component: InternetExplorer,
-    header: {
-      title: 'Internet Explorer',
-      icon: iePaper,
-    },
-    defaultSize: {
-      width: 700,
-      height: 500,
-    },
-    defaultOffset: {
-      x: 130,
-      y: 20,
-    },
-    resizable: true,
-    minimized: false,
-    maximized: window.innerWidth < 800,
-    id: genId(),
-    zIndex: genIndex(),
-  },
-  {
-    component: Minesweeper,
-    header: {
-      title: 'Minesweeper',
-      icon: mine,
-    },
-    defaultSize: {
-      width: 0,
-      height: 0,
-    },
-    defaultOffset: {
-      x: 180,
-      y: 170,
-    },
-    resizable: false,
-    minimized: false,
-    maximized: false,
-    id: genId(),
-    zIndex: genIndex(),
-  },
-  {
-    component: Winamp,
-    header: {
-      title: 'Winamp',
-      icon: winamp,
-      invisible: true,
-    },
-    defaultSize: {
-      width: 0,
-      height: 0,
-    },
-    defaultOffset: {
-      x: 0,
-      y: 0,
-    },
-    resizable: false,
-    minimized: false,
-    maximized: false,
-    id: genId(),
-    zIndex: genIndex(),
-  },
-  {
-    component: MyComputer,
-    header: {
-      title: 'My Computer',
-      icon: computer,
-    },
-    defaultSize: {
-      width: 660,
-      height: 500,
-    },
-    defaultOffset: {
-      x: 250,
-      y: 40,
-    },
-    resizable: true,
-    minimized: false,
-    maximized: window.innerWidth < 800,
-    id: genId(),
-    zIndex: genIndex(),
-  },
-];
+export const defaultAppState = [];
 
 export const defaultIconState = [
   {
@@ -120,37 +43,30 @@ export const defaultIconState = [
   },
   {
     id: 1,
-    icon: mine,
-    title: 'Minesweeper',
-    component: Minesweeper,
+    icon: lw,
+    title: 'Limewire',
+    component: Limewire,
     isFocus: false,
   },
   {
     id: 2,
-    icon: computerLarge,
-    title: 'My Computer',
-    component: MyComputer,
+    icon: msn,
+    title: 'MSN',
+    component: MSN,
     isFocus: false,
   },
   {
     id: 3,
-    icon: notepadLarge,
-    title: 'Notepad',
-    component: Notepad,
+    icon: maple,
+    title: 'Maplestory',
+    component: Maplestory,
     isFocus: false,
   },
   {
     id: 4,
-    icon: winamp,
-    title: 'Winamp',
-    component: Winamp,
-    isFocus: false,
-  },
-  {
-    id: 5,
-    icon: paintLarge,
-    title: 'Paint',
-    component: Paint,
+    icon: outlook,
+    title: 'E-mail',
+    component: Email,
     isFocus: false,
   },
 ];
@@ -175,23 +91,80 @@ export const appSettings = {
     maximized: window.innerWidth < 800,
     multiInstance: true,
   },
-  Minesweeper: {
+  Limewire: {
     header: {
-      icon: mine,
-      title: 'Minesweeper',
+      icon: lw,
+      title: 'Limewire',
     },
-    component: Minesweeper,
+    component: Limewire,
     defaultSize: {
-      width: 0,
-      height: 0,
+      width: 700,
+      height: 500,
     },
     defaultOffset: {
-      x: 190,
-      y: 180,
+      x: 140,
+      y: 30,
     },
-    resizable: false,
+    resizable: true,
     minimized: false,
-    maximized: false,
+    maximized: window.innerWidth < 800,
+    multiInstance: true,
+  },
+  Maplestory: {
+    header: {
+      icon: maple,
+      title: 'Maplestory',
+    },
+    component: Maplestory,
+    defaultSize: {
+      width: 700,
+      height: 500,
+    },
+    defaultOffset: {
+      x: 140,
+      y: 30,
+    },
+    resizable: true,
+    minimized: false,
+    maximized: window.innerWidth < 800,
+    multiInstance: true,
+  },
+  'E-mail': {
+    header: {
+      icon: mail,
+      title: 'E-mail',
+    },
+    component: Email,
+    defaultSize: {
+      width: 700,
+      height: 500,
+    },
+    defaultOffset: {
+      x: 140,
+      y: 30,
+    },
+    resizable: true,
+    minimized: false,
+    maximized: window.innerWidth < 800,
+    multiInstance: true,
+  },
+  MSN: {
+    header: {
+      icon: msn,
+      title: 'MSN',
+    },
+    component: MSN,
+    defaultSize: {
+      width: 700,
+      height: 500,
+    },
+    defaultOffset: {
+      x: 140,
+      y: 30,
+    },
+    resizable: true,
+    minimized: false,
+    maximized: window.innerWidth < 800,
     multiInstance: true,
   },
   Error: {
@@ -215,83 +188,6 @@ export const appSettings = {
     maximized: false,
     multiInstance: true,
   },
-  'My Computer': {
-    header: {
-      icon: computer,
-      title: 'My Computer',
-    },
-    component: MyComputer,
-    defaultSize: {
-      width: 660,
-      height: 500,
-    },
-    defaultOffset: {
-      x: 260,
-      y: 50,
-    },
-    resizable: true,
-    minimized: false,
-    maximized: window.innerWidth < 800,
-    multiInstance: false,
-  },
-  Notepad: {
-    header: {
-      icon: notepad,
-      title: 'Untitled - Notepad',
-    },
-    component: Notepad,
-    defaultSize: {
-      width: 660,
-      height: 500,
-    },
-    defaultOffset: {
-      x: 270,
-      y: 60,
-    },
-    resizable: true,
-    minimized: false,
-    maximized: window.innerWidth < 800,
-    multiInstance: true,
-  },
-  Winamp: {
-    header: {
-      icon: winamp,
-      title: 'Winamp',
-      invisible: true,
-    },
-    component: Winamp,
-    defaultSize: {
-      width: 0,
-      height: 0,
-    },
-    defaultOffset: {
-      x: 0,
-      y: 0,
-    },
-    resizable: false,
-    minimized: false,
-    maximized: false,
-    multiInstance: false,
-  },
-  Paint: {
-    header: {
-      icon: paint,
-      title: 'Untitled - Paint',
-    },
-    component: Paint,
-    defaultSize: {
-      width: 660,
-      height: 500,
-    },
-    defaultOffset: {
-      x: 280,
-      y: 70,
-    },
-    resizable: true,
-    minimized: false,
-    maximized: window.innerWidth < 800,
-    multiInstance: true,
-  },
 };
 
-export { InternetExplorer, Minesweeper, ErrorBox, MyComputer, Notepad, Winamp };
+export { InternetExplorer, ErrorBox, Limewire, Maplestory, MSN, Email };

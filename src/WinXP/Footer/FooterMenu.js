@@ -27,6 +27,10 @@ import allProgramsIcon from 'assets/windowsIcons/all-programs.ico';
 import winamp from 'assets/windowsIcons/winamp.png';
 import notepad from 'assets/windowsIcons/327(32x32).png';
 import empty from 'assets/empty.png';
+import lw from 'assets/windowsIcons/limewire.png';
+import msn from 'assets/windowsIcons/msn.png';
+import maplestory from 'assets/windowsIcons/maple.png';
+import mail from 'assets/windowsIcons/mail.png';
 
 import { AllPrograms, ConnectTo, MyRecentDocuments } from './FooterMenuData';
 
@@ -56,12 +60,9 @@ function FooterMenu({ className, onClick }) {
           <Items
             onClick={onClick}
             items={[
-              { icon: mine, text: 'Minesweeper' },
-              { icon: notepad, text: 'Notepad' },
-              { icon: winamp, text: 'Winamp' },
-              { icon: paint, text: 'Paint' },
-              { icon: mediaPlayer, text: 'Windows Media Player' },
-              { icon: messenger, text: 'Windows Messenger' },
+              { icon: lw, text: 'Limewire' },
+              { icon: msn, text: 'MSN' },
+              { icon: maplestory, text: 'Maplestory' },
             ]}
           />
           <div style={{ flex: 1 }} />

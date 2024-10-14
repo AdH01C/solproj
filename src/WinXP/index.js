@@ -23,6 +23,7 @@ import Footer from './Footer';
 import Windows from './Windows';
 import Icons from './Icons';
 import { DashedBox } from 'components';
+import Maplestory from './apps/Maplestory';
 
 const initState = {
   apps: defaultAppState,
@@ -216,10 +217,30 @@ function WinXP() {
     dispatch({ type: FOCUS_ICON, payload: id });
   }
   function onDoubleClickIcon(component) {
-    const appSetting = Object.values(appSettings).find(
-      setting => setting.component === component,
-    );
-    dispatch({ type: ADD_APP, payload: appSetting });
+    if (component === appSettings['Internet Explorer'].component) {
+      window.location.href = 'https://www.x.com';
+      return;
+    } else if (component === appSettings.Limewire.component) {
+      window.location.href = 'https://open.spotify.com';
+      return;
+    } else if (component === appSettings['E-mail'].component) {
+      window.location.href = 'https://dexscreener.com';
+      return;
+    } else if (component === appSettings.MSN.component) {
+      dispatch({
+        type: ADD_APP,
+        payload: {
+          ...appSettings.Error,
+          injectProps: { message: 'Who still uses this lmaoo' },
+        },
+      });
+      return;
+    } else {
+      const appSetting = Object.values(appSettings).find(
+        setting => setting.component === component,
+      );
+      dispatch({ type: ADD_APP, payload: appSetting });
+    }
   }
   function getFocusedAppId() {
     if (state.focusing !== FOCUSING.WINDOW) return -1;
@@ -232,19 +253,25 @@ function WinXP() {
     dispatch({ type: FOCUS_DESKTOP });
   }
   function onClickMenuItem(o) {
-    if (o === 'Internet')
-      dispatch({ type: ADD_APP, payload: appSettings['Internet Explorer'] });
-    else if (o === 'Minesweeper')
-      dispatch({ type: ADD_APP, payload: appSettings.Minesweeper });
-    else if (o === 'My Computer')
-      dispatch({ type: ADD_APP, payload: appSettings['My Computer'] });
-    else if (o === 'Notepad')
-      dispatch({ type: ADD_APP, payload: appSettings.Notepad });
-    else if (o === 'Winamp')
-      dispatch({ type: ADD_APP, payload: appSettings.Winamp });
-    else if (o === 'Paint')
-      dispatch({ type: ADD_APP, payload: appSettings.Paint });
-    else if (o === 'Log Off')
+    if (o === 'Internet') window.location.href = 'https://www.x.com';
+    else if (o === 'Limewire')
+      window.location.href = 'https://open.spotify.com';
+    else if (o === 'MSN') {
+      dispatch({
+        type: ADD_APP,
+        payload: {
+          ...appSettings.Error,
+          injectProps: { message: 'Who still uses this lmaoo' },
+        },
+      });
+    } else if (o === 'Maplestory') {
+      dispatch({
+        type: ADD_APP,
+        payload: Maplestory,
+      });
+    } else if (o === 'E-mail') {
+      window.location.href = 'https://dexscreener.com';
+    } else if (o === 'Log Off')
       dispatch({ type: POWER_OFF, payload: POWER_STATE.LOG_OFF });
     else if (o === 'Turn Off Computer')
       dispatch({ type: POWER_OFF, payload: POWER_STATE.TURN_OFF });
